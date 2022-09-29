@@ -1,0 +1,102 @@
+/* General settings */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap'); 
+font-family: 'Amatic SC', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@700&display=swap');
+
+html {
+  box-sizing: border-box;
+  background-color: #c3f37b;
+  font: 20px 'Acme', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Panels' settings */
+
+.panels {
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-color: #6b0f9c;
+  box-shadow: inset 0 0 0 5px rgba(196, 195, 195, 0.1);
+  color: white;
+  
+  /* transition settings */
+  transition: 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+  font-size: 20px;
+}
+
+/* Images for the panels */
+
+.panel01 { background-image: url('img/img-01.jpg'); }
+.panel02 { background-image: url('img/img-02.jpg'); }
+.panel03 { background-image: url('img/img-03.jpg'); }
+.panel04 { background-image: url('img/img-04.jpg'); }
+.panel05 { background-image: url('img/img-05.jpg'); }
+
+/* Flex items */
+
+.panel > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  flex: 1 0 auto;
+}
+
+.panel > *:first-child { 
+  transform: translateY(-100%); 
+}
+
+.panel.open-active > *:first-child { 
+  transform: translateY(0); 
+}
+    
+.panel > *:last-child { 
+  transform: translateY(100%); 
+}
+
+.panel.open-active > *:last-child { 
+  transform: translateY(0); 
+}
+
+.panel p {
+  text-transform: uppercase;
+  text-shadow: 0 0 1vmax rgba(0, 0, 0, 0.72), 0 0 1vmax rgba(0, 0, 0, 0.45);
+  font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel.open {
+  flex: 5;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .panel p {
+    font-size: 1em;
+  }
+}
