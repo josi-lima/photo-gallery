@@ -7,7 +7,7 @@ function toggleOpen() {
 }
 
 function toggleActive(e) {
-  if(e.propertyName.includes('flex')) {
+  if(e.propertyName.includes('flex')) { // due to variations between browsers, we use .includes() to find the key word 'flex' here
     this.classList.toggle('open-active');
   }
 }
